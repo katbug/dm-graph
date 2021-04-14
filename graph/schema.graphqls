@@ -1,0 +1,68 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+type Person {
+  id: ID!
+  name: String!
+  description: String!
+  people: [Person]
+  places: [Place]
+  things: [Thing]
+  ideas: [Idea]
+  factions: [Faction]
+}
+
+type Place {
+  id: ID!
+  name: String!
+  description: String!
+  location: String!
+  people: [Person]
+  things: [Thing]
+  ideas: [Idea]
+  factions: [Faction]
+}
+
+type Thing {
+  id: ID!
+  name: String!
+  description: String!
+  people: [Person]
+  places: [Place]
+  ideas: [Idea]
+  factions: [Faction]
+}
+
+type Idea {
+  id: ID!
+  name: String!
+  description: String!
+  people: [Person]
+  places: [Place]
+  things: [Thing]
+  factions: [Faction]
+}
+
+type Faction {
+  id: ID!
+  name: String!
+  description: String!
+  people: [Person]
+  places: [Place]
+  things: [Thing]
+  ideas: [Idea]
+}
+
+type Query {
+  people: [Person!]!
+}
+
+input NewPerson {
+  name: String!
+  description: String!
+}
+
+type Mutation {
+  createPerson(input: NewPerson!): Person!
+}
